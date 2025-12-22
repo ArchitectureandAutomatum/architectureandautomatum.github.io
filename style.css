@@ -1,0 +1,160 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #0b0c10;
+  color: #e5e7eb;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("assets/hero.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 60px;
+  text-align: center;
+  border-radius: 14px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+/* BUTTONS */
+.btn {
+  background: #f59e0b;
+  color: black;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn.secondary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn.small {
+  padding: 8px 16px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.section.dark {
+  background: #111827;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: black;
+  opacity: 0.5;
+}
+
+/* EMBEDS */
+.map-frame,
+.store-frame {
+  width: 100%;
+  height: calc(100vh - 64px);
+  border: none;
+}
+
+/* ANIMATIONS */
+.section, .card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* MAP PAGE OVERRIDES */
+.map-page .navbar {
+  position: relative; /* not fixed */
+  backdrop-filter: blur(12px);
+}
+.map-container {
+  height: calc(100vh - 64px);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
