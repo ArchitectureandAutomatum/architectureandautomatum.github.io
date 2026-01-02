@@ -1,0 +1,134 @@
+/* RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: system-ui, sans-serif; background: #0b0c10; color: #e5e7eb; line-height: 1.6; }
+
+/* NAVBAR & EFFECTS */
+.navbar { position: fixed; top: 0; width: 100%; height: 64px; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.navbar a { 
+  color: white; 
+  text-decoration: none; 
+  margin-left: 24px; 
+  font-weight: 500; 
+  position: relative; 
+  padding: 5px 0;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Navbar Underline Effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: #f59e0b;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover {
+  color: #f59e0b;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero { 
+  height: 100vh; 
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)), url('assets/hero.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  display: flex; align-items: center; justify-content: center; text-align: center; 
+}
+.hero-logo { max-width: 800px; width: 90%; margin-bottom: 40px; }
+.hero-btns { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.hero-btn-play { font-size: 1.6rem; font-weight: 900; background: #f59e0b; color: black; padding: 12px 60px; text-decoration: none; border-radius: 10px; transition: transform 0.2s; letter-spacing: 2px; }
+.hero-btn-support { font-size: 1rem; font-weight: 700; background: rgba(255, 255, 255, 0.1); color: white; padding: 10px 40px; text-decoration: none; border-radius: 8px; border: 1px solid white; transition: 0.2s; }
+.hero-btn-play:hover { transform: scale(1.05); }
+.hero-btn-support:hover { background: rgba(255,255,255,0.2); }
+
+/* SECTIONS */
+.section { padding: 100px 20px; text-align: center; }
+.section.dark { background: #020617; }
+.container { max-width: 1200px; margin: 0 auto; }
+h2 { font-size: 2.5rem; margin-bottom: 40px; }
+
+/* GALLERY */
+.gallery-container { display: flex; align-items: center; justify-content: center; gap: 15px; max-width: 1100px; margin: 0 auto; position: relative; }
+.gallery-wrapper { display: flex; gap: 15px; overflow-x: hidden; scroll-behavior: smooth; padding: 10px 0; }
+.gallery-wrapper img { flex: 0 0 350px; height: 250px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(255,255,255,0.1); }
+.nav-btn { 
+  background: #f59e0b;
+  color: black;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px 5px 10px;
+  margin: 0;
+}
+.nav-btn:hover { transform: scale(1.1); background: #fbbf24; }
+
+/* SEASONS */
+.season-grid { display: grid; grid-template-columns: repeat(auto-fit, 320px); gap: 30px; justify-content: center; }
+.season-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; }
+.season-header { height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; }
+.season-image { max-height: 100%; max-width: 100%; object-fit: contain; }
+.season-buttons { display: flex; gap: 10px; width: 100%; margin-top: 20px; }
+.season-btn { flex: 1; height: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; border-radius: 8px; font-weight: bold; color: black; font-size: 0.9rem; }
+.orange { background: #f59e0b; } .green { background: #22c55e; } .blue { background: #3b82f6; color: white; }
+
+/* TEAM SECTION & INTENSIFIED GLOWS */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, 220px); gap: 20px; justify-content: center; }
+.team-card { 
+  background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; 
+  display: flex; flex-direction: column; align-items: center; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.team-card img { width: 120px; margin-bottom: 15px; }
+.role { font-weight: bold; margin-top: 5px; }
+.handle { font-size: 0.85rem; color: #9ca3af; margin-top: 2px; margin-bottom: 6px; }
+
+/* Staff Hover Interaction */
+.team-card:hover { transform: translateY(-12px); background: rgba(255, 255, 255, 0.08); }
+
+/* Brightened Static Glows & Neon Hover */
+.owner { box-shadow: 0 0 25px rgba(168, 85, 247, 0.35); } .owner-role { color: #a855f7; }
+.owner:hover { box-shadow: 0 15px 45px rgba(168, 85, 247, 0.85); }
+
+.ceo { box-shadow: 0 0 25px rgba(239, 68, 68, 0.35); } .ceo-role { color: #ef4444; }
+.ceo:hover { box-shadow: 0 15px 45px rgba(239, 68, 68, 0.85); }
+
+.dev { box-shadow: 0 0 25px rgba(249, 115, 22, 0.35); } .dev-role { color: #f97316; }
+.dev:hover { box-shadow: 0 15px 45px rgba(249, 115, 22, 0.85); }
+
+.admin { box-shadow: 0 0 25px rgba(34, 197, 94, 0.35); } .admin-role { color: #22c55e; }
+.admin:hover { box-shadow: 0 15px 45px rgba(34, 197, 94, 0.85); }
+
+.mod { box-shadow: 0 0 25px rgba(59, 130, 246, 0.35); } .mod-role { color: #3b82f6; }
+.mod:hover { box-shadow: 0 15px 45px rgba(59, 130, 246, 0.85); }
+
+.helper { box-shadow: 0 0 25px rgba(255, 234, 0, 0.35); } .helper-role { color: #ffea00; }
+.helper:hover { box-shadow: 0 15px 45px rgba(255, 234, 0, 0.85); }
+
+/* SUPPORT */
+.support-grid { display: flex; justify-content: center; }
+.support-card { 
+  background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; width: 280px; 
+  text-decoration: none; color: white; border: 1px solid transparent; transition: 0.3s; text-align: center; 
+}
+.kofi:hover { border-color: #29abe2; background: rgba(41, 171, 226, 0.1); box-shadow: 0 0 20px rgba(41, 171, 226, 0.3); }
+
+footer { padding: 40px; text-align: center; opacity: 0.4; }
